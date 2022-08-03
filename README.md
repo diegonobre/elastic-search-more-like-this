@@ -1,3 +1,16 @@
+# Next.js + Tailwind CSS + ElasticSearch
+
+> Inspired in the article: Create a lookalike search engine with Next.js, Tailwind and Elasticsearch (10 steps)
+> https://dev.to/rap2hpoutre/create-a-lookalike-search-engine-with-nextjs-tailwind-and-elasticsearch-10-steps-4o9e
+
+```sh
+# turn on Elasticsearch + Kibana
+docker-compose up -d
+
+# populate the database with sample data
+npx create-elasticsearch-dataset --dataset=books
+```
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
