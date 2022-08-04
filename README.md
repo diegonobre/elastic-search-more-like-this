@@ -9,6 +9,9 @@ docker-compose up -d
 
 # populate the database with sample data
 npx create-elasticsearch-dataset --dataset=books
+
+# dump/restore existing data
+./node_modules/.bin/elasticdump --input=http://localhost:9200/books --output=./data/books_data.json --type=data
 ```
 
 # Next.js + Tailwind CSS Example
