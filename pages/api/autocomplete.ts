@@ -6,7 +6,7 @@ const search = async (
   res: NextApiResponse
 ) => {
   const { query } = req.query;
-  const r = await axios.post('http://localhost:9200/books/_search?pretty', {
+  const r = await axios.post(`https://${process.env.ELASTICSEARCH_USER}:${process.env.ELASTICSEARCH_PASS}@${process.env.ELASTICSEARCH_HOST}/books/_search?pretty`, {
     "query": {
       "match_bool_prefix": {
         "title": `${query}`

@@ -6,7 +6,7 @@ const search = async (
   res: NextApiResponse
 ) => {
   const id: string = req.query.id as string;
-  const r = await axios.post('http://localhost:9200/books/_search?pretty', {
+  const r = await axios.post(`https://${process.env.ELASTICSEARCH_USER}:${process.env.ELASTICSEARCH_PASS}@${process.env.ELASTICSEARCH_HOST}/books/_search?pretty`, {
     "size": 12,
     "query": {
       "more_like_this": {
@@ -19,7 +19,7 @@ const search = async (
         "like": [
           {
             "_index": "books",
-            "_id": "r0V8YYIBgCKAj2lz3Mit"
+            "_id": id
           }
         ],
         "min_term_freq": 1,
